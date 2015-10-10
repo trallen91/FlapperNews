@@ -1,4 +1,15 @@
-angular.module('flapperNews', []).controller("MainCtrl", ["$scope", function($scope){
+angular.module("flapperNews", []).factory("posts", [function(){
+  var o = {
+    posts: []
+  };
+  return o;
+}]);
+
+angular.module("flapperNews").controller('MainCtrl', [
+'$scope',
+"posts",
+function($scope, posts){
+    $scope.posts = posts.posts;
     $scope.posts = [
       {title: 'post 1', upvotes: 5},
       {title: 'post 2', upvotes: 2},
@@ -9,11 +20,14 @@ angular.module('flapperNews', []).controller("MainCtrl", ["$scope", function($sc
 
     $scope.addPost = function(){
       if(!$scope.title || $scope.title === '') { return; }
-      $scope.posts.push({title: $scope.title, upvotes: 0});
+      $scope.posts.push({title: $scope.title, link: $scope.link, upvotes: 0});
       $scope.title = '';
+      $scope.link = '';
+      console.log($scope.posts)
     };
 
     $scope.incrementUpvotes = function(post) {
       post.upvotes += 1;
     };
 }]);
+
