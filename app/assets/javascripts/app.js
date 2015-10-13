@@ -1,6 +1,6 @@
 // templateUrl: '/assets/templates/_home.html',
 
-angular.module('flapperNews', ['ui.router', 'templates']);
+angular.module('flapperNews', ['ui.router', 'templates', 'Devise']);
 
 angular.module('flapperNews').config([
   '$stateProvider',

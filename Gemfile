@@ -19,6 +19,12 @@ gem 'responders', '~> 2.0'
 
 gem 'angular_rails_csrf'
 
+gem 'devise', '~> 3.4.0'
+
+source "https://rails-assets.org" do
+  gem "rails-assets-angular-devise"
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
