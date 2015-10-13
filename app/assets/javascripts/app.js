@@ -1,3 +1,5 @@
+// templateUrl: '/assets/templates/_home.html',
+
 angular.module('flapperNews', ['ui.router', 'templates']);
 
 angular.module('flapperNews').config([
@@ -6,7 +8,7 @@ angular.module('flapperNews').config([
   function($stateProvider, $urlRouterProvider) {
       $stateProvider.state('home', {
         url: "/home",
-        templateUrl: '/home.html',
+        templateUrl: 'home/_home.html',
         controller: 'MainCtrl'
       });
 
